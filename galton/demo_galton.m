@@ -1,5 +1,5 @@
 mdl = 'galton_mdl';
-sig_gen_mdl = 'galton_gen_sl';
+sig_gen_mdl = 'galton_gen_sf';
 
 graph = sys_sim(mdl, sig_gen_mdl, 4); 
 % simulate until 10, making changes at interval of 1.
