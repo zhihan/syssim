@@ -17,7 +17,8 @@ classdef Edge < handle
     methods (Access = public)
         % EQUALS determine if two edge objects are the same
         function yesno = equals(obj1, obj2)
-            yesno = isequal(obj1, obj2);
+            yesno = (obj1.source == obj2.source) && ...
+            (obj1.sink == obj2.sink);
         end
         
         function obj = Edge(src, sink)

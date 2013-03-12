@@ -63,7 +63,8 @@ classdef DG < handle
                 end
             end
         end
-
+        
+        % Add an edge to the graph
         function [idx, isnew] = add_edge(obj, edge)
             idx = obj.find_edge(edge);
             isnew = false;

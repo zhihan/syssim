@@ -6,7 +6,12 @@ classdef StateNode < Graph.Node
     methods
         function yesno = equals(obj1, obj2)
             % Equality relationship is defined by closeness
-            yesno = isclose(obj1.data, obj2.data);
+            if obj1 == obj2
+                % If the objects are identical
+                yesno = true;
+            else
+                yesno = isclose(obj1.data, obj2.data);
+            end
         end
         
     end
