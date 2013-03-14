@@ -1,5 +1,5 @@
 Model {
-  Name			  "galton_gen_sf"
+  Name			  "galton_gen_sl"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
@@ -25,22 +25,11 @@ Model {
       Name		      "Out3"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.9"
+    ComputedModelVersion    "1.16"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "US-ASCII"
-  slprops.hdlmdlprops {
-    $PropName		    "HDLParams"
-    $ObjectID		    1
-    Array {
-      Type		      "Cell"
-      Dimension		      2
-      Cell		      "HDLSubsystem"
-      Cell		      "galton_gen_sf"
-      PropName		      "mdlProps"
-    }
-  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -53,17 +42,17 @@ Model {
   MaxMDLFileLineLength	  120
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    2
+    $ObjectID		    1
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      3
+      $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [32.0, 80.0, 749.0, 751.0]
+      Location		      [349.0, 79.0, 594.0, 593.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		4
+	$ObjectID		3
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[0]
 	DockPosition		"Left"
@@ -73,32 +62,20 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		5
+	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [705.0, 577.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [0]
-	  ViewObjType		  "StateflowChart"
-	  LoadSaveID		  "2"
-	  Extents		  [705.0, 577.0]
-	  ZoomFactor		  [1.4172335600907031]
-	  Offset		  [24.793, 14.604]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[550.0, 420.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -108,15 +85,15 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "zhan"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 14 09:55:28 2013"
-  RTWModifiedTimeStamp	  285155684
-  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  LastModifiedDate	  "Thu Mar 14 09:56:38 2013"
+  RTWModifiedTimeStamp	  285155796
+  ModelVersionFormat	  "1.%<AutoIncrement:16>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "none"
   WideLines		  off
-  ShowLineDimensions	  on
+  ShowLineDimensions	  off
   ShowPortDataTypes	  off
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
@@ -145,13 +122,13 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "galton_gen_sf"
+    model_		    "galton_gen_sl"
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "galton_gen_sf"
+      Cell		      "galton_gen_sl"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -203,13 +180,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      7
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
@@ -244,7 +221,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -256,7 +233,7 @@ Model {
 	  LoadInitialState	  off
 	  SaveFinalState	  on
 	  SaveCompleteFinalSimState on
-	  SaveFormat		  "Structure"
+	  SaveFormat		  "Array"
 	  SignalLoggingSaveFormat "ModelDataLogs"
 	  SaveOutput		  on
 	  SaveState		  off
@@ -276,7 +253,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -330,7 +307,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -420,7 +397,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -461,7 +438,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -476,7 +453,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -491,7 +468,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -552,7 +529,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      16
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -615,7 +592,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -697,7 +674,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  20
+	  $ObjectID		  18
 	  Version		  "1.13.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -712,18 +689,18 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 512, 246, 1408, 935 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 520, 310, 1441, 981 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    7
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    21
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -784,10 +761,22 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
     }
     Block {
       BlockType		      Inport
@@ -825,43 +814,24 @@ Model {
       InitialOutput	      "[]"
     }
     Block {
-      BlockType		      S-Function
-      FunctionName	      "system"
-      SFunctionModules	      "''"
-      PortCounts	      "[]"
-      SFunctionDeploymentMode off
-    }
-    Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      FunctionInterfaceSpec   "void_void"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      DataTypeOverrideAppliesTo	"AllNumericTypes"
-      MinMaxOverflowLogging   "UseLocalSettings"
-      SFBlockType	      "NONE"
-      Variant		      off
-      GeneratePreprocessorConditionals off
-    }
-    Block {
-      BlockType		      Terminator
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
     }
   }
   System {
-    Name		    "galton_gen_sf"
-    Location		    [32, 80, 781, 831]
+    Name		    "galton_gen_sl"
+    Location		    [349, 79, 943, 672]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -875,225 +845,169 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5"
+    SIDHighWatermark	    "14"
     Block {
       BlockType		      Inport
       Name		      "direction"
       SID		      "1"
-      Position		      [60, 98, 90, 112]
+      Position		      [25, 78, 55, 92]
       ZOrder		      -1
       IconDisplay	      "Port number"
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Chart"
+      BlockType		      Constant
+      Name		      "Branches"
+      SID		      "4"
+      Position		      [80, 270, 110, 300]
+      ZOrder		      -4
+      Value		      "2"
+    }
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
       SID		      "2"
-      Ports		      [1, 3]
-      Position		      [180, 52, 335, 148]
+      Position		      [35, 200, 55, 220]
       ZOrder		      -2
-      ErrorFcn		      "Stateflow.Translate.translate"
-      PermitHierarchicalResolution "ExplicitOnly"
-      TreatAsAtomicUnit	      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      SFBlockType	      "Chart"
-      System {
-	Name			"Chart"
-	Location		[32, 80, 781, 831]
-	Open			on
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	"10"
-	Block {
-	  BlockType		  Inport
-	  Name			  "flip"
-	  SID			  "2::1"
-	  Position		  [20, 101, 40, 119]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  " Demux "
-	  SID			  "2::9"
-	  Ports			  [1, 1]
-	  Position		  [270, 245, 320, 285]
-	  ZOrder		  2
-	  Outputs		  "1"
-	}
-	Block {
-	  BlockType		  S-Function
-	  Name			  " SFunction "
-	  SID			  "2::8"
-	  Tag			  "Stateflow S-Function galton_gen_sf 1"
-	  Ports			  [1, 4]
-	  Position		  [180, 102, 230, 203]
-	  ZOrder		  1
-	  FunctionName		  "sf_sfun"
-	  PortCounts		  "[1 4]"
-	  EnableBusSupport	  on
-	  Port {
-	    PortNumber		    2
-	    Name		    "direction"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    3
-	    Name		    "out"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	  Port {
-	    PortNumber		    4
-	    Name		    "duration"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  " Terminator "
-	  SID			  "2::10"
-	  Position		  [460, 256, 480, 274]
-	  ZOrder		  3
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "direction"
-	  SID			  "2::5"
-	  Position		  [460, 101, 480, 119]
-	  ZOrder		  -5
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "out"
-	  SID			  "2::6"
-	  Position		  [460, 136, 480, 154]
-	  ZOrder		  -6
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "duration"
-	  SID			  "2::7"
-	  Position		  [460, 171, 480, 189]
-	  ZOrder		  -7
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "flip"
-	  SrcPort		  1
-	  DstBlock		  " SFunction "
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "direction"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  2
-	  DstBlock		  "direction"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "out"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  3
-	  DstBlock		  "out"
-	  DstPort		  1
-	}
-	Line {
-	  Name			  "duration"
-	  Labels		  [0, 0]
-	  SrcBlock		  " SFunction "
-	  SrcPort		  4
-	  DstBlock		  "duration"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " Demux "
-	  SrcPort		  1
-	  DstBlock		  " Terminator "
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  " SFunction "
-	  SrcPort		  1
-	  DstBlock		  " Demux "
-	  DstPort		  1
-	}
-      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant2"
+      SID		      "5"
+      Position		      [25, 15, 55, 45]
+      ZOrder		      -5
+      Value		      "-1"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "6"
+      Position		      [25, 135, 55, 165]
+      ZOrder		      -6
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      SID		      "7"
+      Position		      [175, 195, 205, 225]
+      ZOrder		      -7
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Duration"
+      SID		      "3"
+      Position		      [80, 335, 110, 365]
+      ZOrder		      -3
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch"
+      SID		      "8"
+      Position		      [275, 145, 305, 175]
+      ZOrder		      -8
+      Threshold		      "1"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch1"
+      SID		      "9"
+      Position		      [160, 70, 190, 100]
+      ZOrder		      -9
+      Threshold		      "1.5"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Outport
       Name		      "Out1"
-      SID		      "3"
-      Position		      [440, 53, 470, 67]
-      ZOrder		      -3
+      SID		      "10"
+      Position		      [390, 153, 420, 167]
+      ZOrder		      -10
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
       Name		      "Out2"
-      SID		      "4"
-      Position		      [440, 88, 470, 102]
-      ZOrder		      -4
+      SID		      "11"
+      Position		      [390, 278, 420, 292]
+      ZOrder		      -11
       Port		      "2"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
       Name		      "Out3"
-      SID		      "5"
-      Position		      [440, 123, 470, 137]
-      ZOrder		      -5
+      SID		      "12"
+      Position		      [390, 343, 420, 357]
+      ZOrder		      -12
       Port		      "3"
       IconDisplay	      "Port number"
     }
     Line {
-      SrcBlock		      "direction"
+      SrcBlock		      "Switch"
       SrcPort		      1
-      Points		      [35, 0; 0, -5]
-      DstBlock		      "Chart"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Chart"
-      SrcPort		      1
-      Points		      [40, 0; 0, -10]
       DstBlock		      "Out1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Chart"
-      SrcPort		      2
-      Points		      [40, 0; 0, -5]
+      SrcBlock		      "Branches"
+      SrcPort		      1
       DstBlock		      "Out2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Chart"
-      SrcPort		      3
+      SrcBlock		      "Duration"
+      SrcPort		      1
       DstBlock		      "Out3"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "direction"
+      SrcPort		      1
+      DstBlock		      "Switch1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant2"
+      SrcPort		      1
+      Points		      [30, 0; 0, 45]
+      DstBlock		      "Switch1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [30, 0; 0, -55]
+      DstBlock		      "Switch1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [90, 0; 0, -50]
+      DstBlock		      "Switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Switch1"
+      SrcPort		      1
+      Points		      [30, 0; 0, 65]
+      DstBlock		      "Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      Points		      [35, 0; 0, -40]
+      DstBlock		      "Switch"
+      DstPort		      3
+    }
+    Annotation {
+      SID		      "13"
+      Name		      "Generate test signal"
+      Position		      [366, 127]
     }
   }
 }
@@ -1106,248 +1020,14 @@ Model {
 Stateflow {
   machine {
     id			    1
-    name		    "galton_gen_sf"
+    name		    "galton_gen_sl"
     created		    "07-Jan-2009 16:27:34"
     isLibrary		    0
-    firstTarget		    14
+    firstTarget		    2
     sfVersion		    76014001.0015
   }
-  chart {
-    id			    2
-    name		    "Chart"
-    windowPosition	    [177 428 467 541]
-    viewLimits		    [24.793 371.243 14.604 413.268]
-    zoomFactor		    0.833
-    screen		    [1 1 1920 1080 1]
-    treeNode		    [0 3 0 0]
-    firstTransition	    9
-    firstJunction	    8
-    viewObj		    2
-    visible		    1
-    machine		    1
-    subviewS {
-      x1		      24.793
-      y1		      20.69
-      zoomFactor	      0.833
-    }
-    ssIdHighWaterMark	    12
-    decomposition	    CLUSTER_CHART
-    firstData		    4
-    updateMethod	    DISCRETE
-    sampleTime		    "0.1"
-    chartFileNumber	    1
-    userSpecifiedStateTransitionExecutionOrder 1
-    disableImplicitCasting  1
-    supportVariableSizing   0
-  }
-  state {
-    id			    3
-    labelString		    "falling\nentry:\nduration=1;\nout = 2;"
-    position		    [113.8 119.2119 129.9199 82.1832]
-    fontSize		    12
-    chart		    2
-    treeNode		    [2 0 0 0]
-    subviewer		    2
-    ssIdNumber		    1
-    type		    OR_STATE
-    decomposition	    CLUSTER_STATE
-  }
-  data {
-    id			    4
-    ssIdNumber		    3
-    name		    "flip"
-    linkNode		    [2 0 5]
-    scope		    INPUT_DATA
-    machine		    1
-    props {
-      array {
-	size			"-1"
-      }
-      type {
-	method			SF_INHERITED_TYPE
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      frame		      SF_FRAME_INHERITED
-    }
-    dataType		    "Inherit: Same as Simulink"
-  }
-  data {
-    id			    5
-    ssIdNumber		    6
-    name		    "direction"
-    linkNode		    [2 4 6]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    6
-    ssIdNumber		    7
-    name		    "out"
-    linkNode		    [2 5 7]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "double"
-  }
-  data {
-    id			    7
-    ssIdNumber		    8
-    name		    "duration"
-    linkNode		    [2 6 0]
-    scope		    OUTPUT_DATA
-    machine		    1
-    props {
-      type {
-	primitive		SF_DOUBLE_TYPE
-	isSigned		1
-	wordLength		"16"
-      }
-      frame		      SF_FRAME_NO
-    }
-    dataType		    "double"
-  }
-  junction {
-    id			    8
-    position		    [169.2 261.8 7]
-    chart		    2
-    linkNode		    [2 0 0]
-    subviewer		    2
-    quantum		    [12 0 0 0]
-    ssIdNumber		    4
-    type		    CONNECTIVE_JUNCTION
-  }
-  transition {
-    id			    9
-    labelString		    "/direction=0;"
-    labelPosition	    [177.2 60.2 63.308 18.708]
-    fontSize		    12
-    src {
-      intersection	      [0 0 1 0 175.145 26.6 0 0]
-    }
-    dst {
-      id		      3
-      intersection	      [1 0 -1 0.4722 175.145 119.2119 0 0]
-    }
-    midPoint		    [175.145 70.6585]
-    chart		    2
-    linkNode		    [2 0 10]
-    dataLimits		    [172.745 177.545 26.6 119.212]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    2
-  }
-  transition {
-    id			    10
-    labelString		    "[flip==1]/direction=1;"
-    labelPosition	    [283.442 291.49 103.958 18.708]
-    fontSize		    12
-    src {
-      id		      8
-      intersection	      [3 0.5547 0.8321 0 173.0829 267.6244 0 0]
-    }
-    dst {
-      id		      3
-      intersection	      [2 1 0 0.7324 243.7199 179.4 0 0]
-    }
-    midPoint		    [303.6 269]
-    chart		    2
-    linkNode		    [2 9 11]
-    dataLimits		    [173.083 306.463 177 291.045]
-    stampAngle		    -2.5536
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-      arcL		      -96.515
-      arcClockDir	      COUNTER_CLOCKWISE
-      midPointSticky	      1
-    }
-    executionOrder	    1
-    ssIdNumber		    9
-  }
-  transition {
-    id			    11
-    labelString		    "[flip==2]/direction=-1;"
-    labelPosition	    [45.366 299.45 107.957 18.708]
-    fontSize		    12
-    src {
-      id		      8
-      intersection	      [3 -0.4472 0.8944 0 166.0695 268.061 0 0]
-    }
-    dst {
-      id		      3
-      intersection	      [4 -1 0 0.1553 113.8 188.6324 0 0]
-    }
-    midPoint		    [68.4 280.2]
-    chart		    2
-    linkNode		    [2 10 12]
-    dataLimits		    [61.984 166.07 186.232 292.046]
-    stampAngle		    -3.6052
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-      arcL		      68.1627
-      midPointSticky	      1
-    }
-    executionOrder	    2
-    ssIdNumber		    11
-  }
-  transition {
-    id			    12
-    labelString		    "after(duration*10, tick)"
-    labelPosition	    [170.8 218.6 113.288 18.708]
-    fontSize		    12
-    src {
-      id		      3
-      intersection	      [3 0 1 0.5736 169.2 201.3951 0 0]
-    }
-    dst {
-      id		      8
-      intersection	      [1 0 -1 0 169.2 254.8 0 0]
-    }
-    midPoint		    [169.2 224.9978]
-    chart		    2
-    linkNode		    [2 11 0]
-    dataLimits		    [166.8 171.6 201.395 254.8]
-    subviewer		    2
-    drawStyle		    SMART
-    slide {
-      sticky		      BOTH_STICK
-    }
-    executionOrder	    1
-    ssIdNumber		    5
-  }
-  instance {
-    id			    13
-    name		    "Chart"
-    machine		    1
-    chart		    2
-  }
   target {
-    id			    14
+    id			    2
     name		    "sfun"
     description		    "Default Simulink S-Function Target."
     machine		    1
