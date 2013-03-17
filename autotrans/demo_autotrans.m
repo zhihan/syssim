@@ -13,4 +13,4 @@ plottran(graph);
 % Extract all simulation runs and plot them
 figure;
 [paths, edges] = Graph.unwind(graph, graph.nodes(1), 10);
-plotpath(graph, edges);
+plotpath(edges);

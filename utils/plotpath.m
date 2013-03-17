@@ -1,4 +1,7 @@
-function plotpath(graph, paths)
+function plotpath(paths)
+% PLOTPATH Plot all the paths of the transition system
+
+
 for i=1:length(paths)
     path = paths{i};
     
@@ -6,7 +9,7 @@ for i=1:length(paths)
         log = path(j).data;
         if ~isempty(log)
             n = length(log.signals);
-            for k=1:length(log.signals)
+            for k=1:n
                 subplot(n, 1, k);
                 hold on;
                 plot(log.time, log.signals(k).values);
@@ -15,4 +18,14 @@ for i=1:length(paths)
         end
     end
 end
+
+% Format the graph
+for k=1:n
+    subplot(n,1,k);
+    box on;
+    grid on;
+end
+
+subplot(n,1,n);
+xlabel('t');
 end

@@ -18,6 +18,7 @@ bfs.run();
 
 
     function newStates = localExplore(initialNode)
+        %Local function used in BFS algorithm
         newStates = {};
         e = initialNode.data;
         
@@ -25,20 +26,29 @@ bfs.run();
         [UT, dests, sigGenXF] = runSigGen(sig_gen_mdl,e.xSigGen,...
             e.location, e.t);
         tFinal = UT(end,1);
+
+        % Simulate the model until the final time of the segment
         [mdlXF, xlog] = runUntilTime(test_mdl, e.xTest, UT, tFinal);
         node = SysSim.StateNode(struct('xTest', mdlXF, ...
             'xSigGen', sigGenXF, 't', tFinal));
         
-        graph.add_edge(SysSim.StateTrans(initialNode, node, xlog));
+        graph.add_edge(SysSim.StateTrans(initialNode, node, xlog, UT));
         
         if tFinal < tfinal
-            % Two different constant maneuvers:
-            %  either 20% throttle or 80% throttle
-            for cmd = 1:dests
-                e = SysSim.StateNode(struct('xTest', mdlXF, ...
-                    'xSigGen', sigGenXF, 'location', cmd, 't', tFinal));
-                graph.add_edge(SysSim.StateTrans(node, e, []));
-                newStates{end+1} =  e;
+            % For each branch, create a transition that takes the input
+            % from one final state to multiple initial states.
+            if dests > 0
+                newStates = cell(1, dests);
+                for cmd = 1:dests
+                    % The new states has the same SimState values as the final
+                    % states, except that they are on different branches. In
+                    % the next step, the branch number is used in the signal
+                    % generator to to generate different signals.
+                    e = SysSim.StateNode(struct('xTest', mdlXF, ...
+                        'xSigGen', sigGenXF, 'location', cmd, 't', tFinal));
+                    graph.add_edge(SysSim.StateTrans(node, e, [], []));
+                    newStates{cmd} =  e;
+                end
             end
         end
     end
