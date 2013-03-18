@@ -33,13 +33,19 @@ function [UT, dests, XF] = runSigGen(mdl, xI, branch, tnow) %#ok<STOUT>
 %% 
 % 
 set_param(mdl, 'LoadInitialState', 'on', 'InitialState', 'xInitial');
+
 xInitial = xI; %#ok<NASGU>
 opt = simset('SrcWorkspace', 'current', 'DstWorkspace', 'current', ...
     'SaveFormat','StructureWithTime');
 %%
 % Run single-step simulation to get the constants
 st = 0.1;
-T = (tnow:st:tnow+st)';
+
+% The initial time is set to zero to avoid warning from SimState. The
+% actual time will be overrriden by the t from SimState.
+% The last time is provided so that it only runs one step.
+T = [0, tnow+st]';
+
 UT = [T, branch*ones(size(T))];
 [~,~,y] =  sim(mdl, T, opt, UT); 
 
